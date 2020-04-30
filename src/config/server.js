@@ -16,7 +16,7 @@ const myConnection = require('express-myconnection');
 
 
 //importing routes
-const customerRoutes = require('../app/routes/route'); // customer routes
+const customerRoutes = require('../routes/route'); // customer routes
 
 
 // instancia express
@@ -26,7 +26,7 @@ const app = express();
 // settings server
 
 app.set('port', process.env.Port || 3000); //settings port
-app.set('views', path.join(__dirname, '../app/views')); // route views
+app.set('views', path.join(__dirname, '../views')); // route views
 app.set('view engine', 'ejs'); //settings engine templates
 
 

@@ -1,3 +1,6 @@
+// Configuración de la conexión.
+
+
 // const mysql = require('mysql');
 // const myConnection = require('express-myconnection');
 
