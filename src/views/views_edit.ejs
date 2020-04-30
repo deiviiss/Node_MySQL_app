@@ -1,0 +1,33 @@
+<%- include ('partials/_header') %>
+
+<h1 class="title mt-3 text-center">Formulario</h1>
+
+<div class="container mt-5">
+  <div class="row">
+
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body text-center">
+
+          <form action="/edit/<%= data[i].id %>" method="post">
+            <div class="form-group">
+              <input type="text" name="asesor" id="" class="form-control" value="<%- data.asesor%>">
+            </div>
+            <div class="form-group">
+              <input type="text" name="cliente" id="" class="form-control" value="<%- data.cliente%>">
+            </div>
+            <div class="form-group">
+              <input type="text" name="curp" id="" class="form-control" value="<%- data.curp%>">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Editar cliente</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include ('partials/_footer') %>

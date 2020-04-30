@@ -1,0 +1,72 @@
+<%- include ('partials/_header') %>
+
+<h1 class="title mt-3 text-center">Formulario</h1>
+
+<div class="container">
+  <div class="row mt-5">
+
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body text-center">
+
+          <form action="/save" method="post">
+            <div class="form-group">
+              <input type="text" name="asesor" id="" class="form-control" placeholder="Asesor">
+            </div>
+            <div class="form-group">
+              <input type="text" name="cliente" id="" class="form-control" placeholder="Cliente">
+            </div>
+            <div class="form-group">
+              <input type="text" name="curp" id="" class="form-control" placeholder="CURP">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save cliente</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-7">
+
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Asesor</th>
+            <th>Cliente</th>
+            <th>CURP</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Recorre el arreglo data y lo pinta en la tabla-->
+          <% if (data) {%>
+          <% for (var i = 0; i < data.length; i++) {%>
+
+          <tr>
+            <td><%= (i+1)%></td>
+            <td><%= data[i].asesor%></td>
+            <td><%= data[i].cliente%></td>
+            <td><%= data[i].curp%></td>
+
+            <!-- botones  -->
+            <td>
+              <!-- Con ejs se manda el id del elemento a borrar o modificar -->
+              <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+              <a href="/edit/<%= data[i].id %>" class="btn btn-info">Update</a>
+            </td>
+          </tr>
+
+          <% }%>
+          <% }%>
+        </tbody>
+      </table>
+
+    </div>
+
+
+  </div>
+</div>
+
+<%- include ('partials/_footer') %>
